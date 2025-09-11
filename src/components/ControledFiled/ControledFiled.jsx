@@ -5,7 +5,14 @@ const ControledFiled = () => {
   const [error, setError] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(password.length<6){
+      setError('6 characters or longer password needed')
+    }
+    else{
+      setError('')
+    }
   };
+
   const handlePasswordOnChange = (e) => {
     console.log(e.target.value);
     setPassword(e.target.value);
